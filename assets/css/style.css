@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("../img/background.jpg") center/cover no-repeat;
+}
+
+h5,
+h1 {
+  font-family: "Anton", sans-serif;
+  color: #fff;
+}
+
+img {
+  width: 7vw;
+  height: 7vw;
+  transform: rotateY(180deg);
+  background-color: blue;
+  transition: 1s;
+}
+
+header {
+  padding: 10px 0;
+  text-align: center;
+  background-color: rgba(236, 14, 14, 0.473);
+}
+header h1 {
+  font-size: 40px;
+  -webkit-text-stroke: 2px #000;
+}
+header article {
+  display: flex;
+  justify-content: space-around;
+}
+header article h5 {
+  font-size: 20px;
+}
+
+main {
+  width: 49vw;
+  height: 32vw;
+  padding: 25px;
+  margin: 2vh auto;
+  background-color: #fff;
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+  justify-items: center;
+}
+main div {
+  width: 7vw;
+  height: 7vw;
+  background-color: black;
+}
+
+#turn {
+  transform: rotatey(0deg);
+  box-shadow: 1px 2px 10px 8px #11d81b;
+  opacity: 10;
+}
+
+.turn {
+  transform: rotatey(0deg);
+  box-shadow: 1px 2px 10px 8px #d81111;
+  opacity: 10;
+}
+
+.disabled {
+  opacity: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
