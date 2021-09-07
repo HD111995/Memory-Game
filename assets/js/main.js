@@ -27,22 +27,26 @@ let srcArr = [
 ]
 //shuffling the Array
 srcArr.sort(() => .8 - Math.random() )
+
 ///call all the img tags and save them in Array
 let images = document.querySelectorAll('img')
+
 //loop the array and giving the img source attribute and give them a class
 for ( i = 0 ; i < images.length ; i ++ ){
     images[i].setAttribute('src',srcArr[i]);
     images[i].classList.add('disabled')
-  
-}
+  }
+
 //define some usable variables
 let counter = 0;
 let compareArray = []
 let clicked = 0;
 let guessed = 0;
+
 // looping the images array to add event and make the comparing
 images.forEach(elt => {
     elt.addEventListener('click',ev => {
+
         //starting the Game
         //click and turn the img as long the counter 
         //smaller then 2 and as long the img disabled
@@ -50,8 +54,10 @@ images.forEach(elt => {
             counter += 1;
             ev.target.classList.add('turn')
             ev.target.classList.remove('disabled')
+
             //push the clicked icons into a new arr to compare the clicked items
             compareArray.push(ev.target.src)
+
             //start comparing the clicked items
             //if the choises are equal
             if(counter == 2 && compareArray[0] == compareArray[1]){
@@ -63,8 +69,10 @@ images.forEach(elt => {
                 }
               } 
                 guessed +=1;
+
                 //reset the counter to 0 to repeat comparing again and again
                 counter = 0;
+
                 //reset the compare Array
                 compareArray = [];
                
@@ -76,12 +84,14 @@ images.forEach(elt => {
                         elt.classList.remove('turn')
                         elt.classList.add('disabled')
                     },700)
+
                     //reset
                     counter = 0;
                     compareArray = [];
                 })
           
             }
+            
             //show results
             document.getElementById('pair-c').innerHTML = clicked;
             document.getElementById('pair-g').innerHTML = guessed;
